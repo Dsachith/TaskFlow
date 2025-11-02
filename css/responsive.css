@@ -1,0 +1,232 @@
+@media (max-width: 1200px) {
+    .kanban-board {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+    
+    .sidebar {
+        width: 250px;
+    }
+}
+
+@media (max-width: 992px) {
+    .kanban-board {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .main-container {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        padding: 1rem;
+    }
+    
+    .sidebar-content {
+        display: flex;
+        gap: 2rem;
+        overflow-x: auto;
+    }
+    
+    .sidebar-section {
+        flex: 0 0 auto;
+        margin-bottom: 0;
+    }
+    
+    .project-list,
+    .filter-list,
+    .team-list {
+        display: flex;
+        gap: 0.5rem;
+    }
+    
+    .project-item,
+    .filter-item,
+    .team-item {
+        white-space: nowrap;
+    }
+    
+    .navbar-content {
+        flex: 1;
+    }
+    
+    .search-container {
+        flex: 0 1 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .kanban-board {
+        grid-template-columns: 1fr;
+    }
+    
+    .board-title {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+    
+    .board-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .board-stats {
+        justify-content: space-between;
+        gap: 1rem;
+    }
+    
+    .main-content {
+        padding: 1rem;
+    }
+    
+    .navbar {
+        padding: 0 1rem;
+    }
+    
+    .navbar-content {
+        gap: 1rem;
+    }
+    
+    .search-container {
+        flex: 1;
+    }
+    
+    .search-input {
+        padding: 0.5rem 1rem 0.5rem 2.5rem;
+    }
+    
+    .modal-dialog {
+        margin: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .sidebar-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .project-list,
+    .filter-list,
+    .team-list {
+        flex-direction: column;
+    }
+    
+    .board-stats {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+    
+    .stat-item {
+        flex-direction: row;
+        gap: 0.5rem;
+        align-items: center;
+    }
+    
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+    
+    .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .task-card {
+        padding: 0.75rem;
+    }
+    
+    .task-footer {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: flex-start;
+    }
+    
+    .task-meta {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+@media print {
+    .navbar,
+    .sidebar,
+    .board-actions,
+    .btn-add-task {
+        display: none !important;
+    }
+    
+    .main-content {
+        padding: 0;
+    }
+    
+    .kanban-board {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .board-column {
+        box-shadow: none;
+        border: 1px solid #ddd;
+        page-break-inside: avoid;
+    }
+    
+    .task-card {
+        box-shadow: none;
+        border: 1px solid #eee;
+    }
+}
+
+@media (prefers-contrast: high) {
+    :root {
+        --border-color: #000000;
+        --shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+    
+    .task-card {
+        border: 2px solid var(--border-color);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .task-card:hover {
+        transform: none;
+        box-shadow: var(--shadow);
+    }
+    
+    .btn:hover {
+        background-color: transparent;
+    }
+    
+    .project-item:hover,
+    .filter-item:hover,
+    .team-item:hover {
+        background-color: transparent;
+    }
+    
+    .btn,
+    .task-card,
+    .project-item,
+    .filter-item,
+    .team-item {
+        min-height: 44px;
+    }
+    
+    .btn-icon {
+        width: 44px;
+        height: 44px;
+    }
+}
